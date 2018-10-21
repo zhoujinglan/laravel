@@ -22,12 +22,12 @@
         <td>{{$good->price}}</td>
         <td>{{$good->intro}}</td>
         <td>
-            <?php if($good['is_on_sale'] === 1){
-                echo '上线';
-            }else{
-                echo "未上线";
-            }
-            ?>
+
+            @if($good->is_on_sale)
+                <i class="glyphicon glyphicon-ok" style="color:green"></i>
+                @else
+                <i class="glyphicon glyphicon-remove" style="color:red"></i>
+            @endif
         </td>
         <td>{{$good->look_num}}</td>
         <td>
