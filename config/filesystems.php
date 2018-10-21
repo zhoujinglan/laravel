@@ -48,6 +48,11 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'image' => [
+            'driver' => 'local',
+            'root' => public_path(),//设置public路径
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

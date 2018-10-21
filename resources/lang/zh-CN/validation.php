@@ -112,6 +112,7 @@ return [
     'uploaded'             => ':attribute 上传失败。',
     'url'                  => ':attribute 格式不正确。',
 
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -127,7 +128,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
     ],
+    'captcha'                  => ':attribute 验证码有误。',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,5 +175,6 @@ return [
         'size'                  => '大小',
         'author'                =>'作者',
         'class_id'              =>'分类',
+        'captcha'               =>'验证码',
     ],
 ];

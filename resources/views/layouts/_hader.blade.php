@@ -30,6 +30,7 @@
                 <li class="active"><a href="{{route("class.index")}}">文章分类</a></li>
                 <li><a href="{{route("category.index")}}">商品分类</a></li>
                 <li><a href="{{route("goods.index")}}">商品列表</a></li>
+                <li><a href="{{route("user.index")}}">用户列表</a></li>
             </ul>
             {{--<form class="navbar-form navbar-left">--}}
                 {{--<div class="form-group">--}}

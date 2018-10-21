@@ -1,7 +1,7 @@
 @extends("layouts.main")
 @section("title","商品修改")
 @section("content")
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label>商品名称</label>
@@ -32,7 +32,11 @@
             <label>商品介绍</label>
             <textarea class="form-control" rows="6" name="intro">{{$good->intro}}</textarea>
         </div>
-
+        <div class="form-group">
+            <label>商品图片</label>
+            <input type="file" name="img" >
+            <img src="/{{$good->logo}}" width="60" alt="">
+        </div>
 
         <button type="submit" class="btn btn-default">修改</button>
     </form>
