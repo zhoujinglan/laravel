@@ -41,8 +41,10 @@ Route::get("goods/del/{id}",'GoodsController@del')->name("goods.del");
 Route::get("goods/look/{id}",'GoodsController@look')->name("goods.look");
 
 
-//用户注册
+// 用户注册  登录
 Route::get("user/index",'UserController@index')->name("user.index");
 Route::any("user/reg",'UserController@reg')->name("user.reg");
 Route::any("user/edit/{id}",'UserController@edit')->name("user.edit");
 Route::get("user/del/{id}",'UserController@del')->name("user.del");
+Route::any("user/login",'UserController@login')->name("user.login");
+Route::get("user/logout",'UserController@logout')->name("user.logout");

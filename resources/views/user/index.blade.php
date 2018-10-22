@@ -1,7 +1,7 @@
 @extends("layouts.main")
 @section("title","用户首页")
 @section("content")
-<a href="{{route("user.reg")}}" class="btn btn-info">用户注册</a>
+{{--<a href="{{route("user.reg")}}" class="btn btn-info">用户注册</a>--}}
 <br/> <br/>
 <table class="table table-bordered">
     <tr>

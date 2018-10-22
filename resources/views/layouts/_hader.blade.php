@@ -41,17 +41,21 @@
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">考虑登录呗</a></li>
+                @auth
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">你的资料在这 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{\Illuminate\Support\Facades\Auth::guard()->user()->name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">个人资料</a></li>
-                        <li><a href="#"> 退出登录</a></li>
-
-
-
+                        <li><a href="{{route("user.logout")}}"> 退出登录</a></li>
                     </ul>
                 </li>
+                @endauth
+                {{--游客状态--}}
+                @guest
+                <li><a href="{{route("user.login")}}">考虑登录呗</a></li>
+                <li><a href="{{route("user.reg")}}">没有的请注册</a></li>
+                @endguest
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

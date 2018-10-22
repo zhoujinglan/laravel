@@ -6,11 +6,16 @@ use App\Models\Goods;
 use App\Models\GoodsCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class GoodsController extends Controller
 {
     //
     public function index(Request $request){
+        //接收参数
+        $url =$request->query();
+
+
         $cateId = $request->get('class_id');
         $minPrice = $request->get('minPrice');
         $maxPrice = $request->get('maxPrice');
@@ -37,7 +42,7 @@ class GoodsController extends Controller
         //$goods=Goods::all();
         $cates=GoodsCategory::all();
         //显示视图
-        return view('goods.index',compact('goods','cates'));
+        return view('goods.index',compact('goods','cates','url'));
     }
     //添加
     public function add(Request $request){
@@ -76,12 +81,16 @@ class GoodsController extends Controller
                 "name"=>"required|min:1",
                 "c_id"=>"required",
                 "intro"=>"required",
+                'img'=>"image"
 
             ]);
             //接收数据
             $data = $request->post();
-            if($data != null){
-                $file=$request->file('img');
+            $file=$request->file('img');
+            if($file ){
+                //删除原来的数据
+
+                Storage::delete($good['logo']);
                 $data['logo']=$file->store('good_img','image');
 
             }

@@ -75,5 +75,5 @@
     </tr>
         @endforeach
 </table>
-{{$goods->links()}}
+{{$goods->appends($url)->links()}}
    @endsection

@@ -10,11 +10,11 @@
         </div>
         <div class="form-group">
             <label >密码</label>
-            <input type="password" class="form-control" placeholder="用户密码" name="password_confirmation" >
+            <input type="password" class="form-control" placeholder="用户密码" name="password" >
         </div>
         <div class="form-group">
             <label >确认密码</label>
-            <input type="password" class="form-control" placeholder="确认密码" name="password" >
+            <input type="password" class="form-control" placeholder="确认密码" name="password_confirmation" >
         </div>
         <div class="form-group">
             <label>上传头像</label>

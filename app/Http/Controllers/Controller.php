@@ -10,4 +10,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct(  ){
+        $this->middleware("auth",[
+            "except"=>['login','reg',"index","logout"]
+        ]);
+
+        $this->middleware("guest",[
+            "only"=>["login","reg"]
+        ]);
+        }
 }

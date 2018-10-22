@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'web',//默认保安
         'passwords' => 'users',
     ],
 
@@ -40,7 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+        /*//添加保安
+        'good' => [
+            'driver' => 'session',
+            'provider' => 'g oods',
+        ],*/
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -63,12 +67,17 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+    //数据提供者
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' =>  \App\Models\User::class
         ],
+
+        /*'admins' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Goods::class
+        ],*/
 
         // 'users' => [
         //     'driver' => 'database',
